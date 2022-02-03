@@ -1,6 +1,7 @@
 ### Setting Up The Project
 
 Please Run The Commands Below to Run the Project
+
 `git clone https://github.com/yishakdotjs/yishakdotjs-Hotel-Booking-System-Frontend.git`
 
 `npm install`
