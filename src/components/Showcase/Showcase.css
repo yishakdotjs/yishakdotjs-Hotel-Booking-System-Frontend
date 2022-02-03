@@ -1,0 +1,14 @@
+.showcase {
+  width: 100%;
+  min-height: 350px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/showcase.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.showcase__hero {
+  font-size: 50px;
+  font-family: Poppins Black;
+  color: #fff;
+}

@@ -1,0 +1,54 @@
+.features__feature {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features__title {
+  font-size: 50px;
+  color: black;
+  font-family: Poppins Black;
+}
+
+.features__feature__title {
+  color: #fff;
+  font-family: Poppins Black;
+}
+
+.feature1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/booking.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.feature2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/reception.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.feature3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/lobby.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.feature4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/delivery.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.feature5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/food.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.feature6 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/gym.jpg);
+  background-size: cover;
+  background-position: center;
+}

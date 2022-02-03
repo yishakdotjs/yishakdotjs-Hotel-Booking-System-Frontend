@@ -1,0 +1,9 @@
+.footer {
+  width: 100%;
+  background: black;
+}
+
+.footer p {
+  font-family: Poppins Regular;
+  color: #fff;
+}
