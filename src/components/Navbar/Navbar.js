@@ -58,8 +58,14 @@ function Navbar(props) {
                 </Link>
               </li>
               <li className="list-unstyled d-flex align-items-center justify-content-center">
+                <Link to="" onClick={props.scrollToRooms} className="nav-link">
+                  Rooms
+                </Link>
+              </li>
+              <li className="list-unstyled d-flex align-items-center justify-content-center">
                 <Link
-                  to="/book-now"
+                  to=""
+                  onClick={props.scrollToBookNow}
                   className="nav-link button"
                   style={{ color: "#fff" }}
                 >

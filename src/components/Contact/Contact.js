@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Contact.css";
+
 import location from "../../style/img/location.png";
 
 function Contact() {
@@ -8,7 +9,7 @@ function Contact() {
     <div>
       <h1 className="contact__title text-center mt-5">Contact Us</h1>
       <div className="container">
-        <div className="row justify-content-center align-items-center m-0 mt-4">
+        <div className="row justify-content-between align-items-center m-0 mt-4">
           <div className="col-md-6">
             <form>
               <input

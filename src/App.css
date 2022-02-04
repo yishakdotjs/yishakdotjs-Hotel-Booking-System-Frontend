@@ -3,17 +3,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .form-control {
   font-family: Poppins Regular;
   font-size: 14px;
-}
-
-.bookNow__title {
-  font-family: Poppins Black;
-  font-size: 50px;
-  color: black;
 }

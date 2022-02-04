@@ -1,0 +1,33 @@
+.bookNow {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../style/img/bedroom.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bookNow__title {
+  font-family: Poppins Black;
+  font-size: 50px;
+  color: #fff;
+}
+
+.bookNow__form__label {
+  color: #fff;
+  font-family: Poppins Regular;
+}
+
+.bookNow form .form-control {
+  background: transparent !important;
+  color: #fff;
+}
+
+.bookNow form option {
+  color: #000;
+}
+
+.bookNow__form__subTitle {
+  font-family: Poppins Black;
+  color: #fff;
+}
