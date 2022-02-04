@@ -1,0 +1,10 @@
+.register {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.register__title {
+  font-family: Poppins Black;
+  color: #000;
+}
