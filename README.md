@@ -8,6 +8,6 @@ Please Run The Commands Below to Run the Project
 
 `npm start`
 
-Demo Link: https://gifted-swartz-89136f.netlify.app/
+Demo Link: https://blissful-minsky-0f92a2.netlify.app/
 
 Please use the email address proyishak@gmail.com to contact me.
