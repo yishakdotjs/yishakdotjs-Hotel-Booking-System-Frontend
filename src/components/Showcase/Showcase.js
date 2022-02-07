@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Showcase.css";
-import showcaseImage from "../../style/img/showcase.jpg";
+// import showcaseImage from "../../style/img/showcase.jpg";
 
 function Showcase() {
   return (

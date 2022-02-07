@@ -8,10 +8,11 @@
   width: 100%;
   height: 300px;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../../style/img/food.jpg);
+    url(../../style/img/bedroom.jpg);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .rooms__room h4 {

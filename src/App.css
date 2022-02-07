@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+a {
+  font-family: Poppins Regular;
+}
+
 .form-control {
   font-family: Poppins Regular;
   font-size: 14px;
