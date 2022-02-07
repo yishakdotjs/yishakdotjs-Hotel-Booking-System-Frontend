@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Room from "./pages/Room/Room";
 
+import Admin from "./pages/Admin/Admin";
+
 function App() {
   const [state] = useStateValue();
 
@@ -34,6 +36,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/room/:id" component={Room} />
+
+        <Route exact path="/admin" component={Admin} />
       </Switch>
     </div>
   );

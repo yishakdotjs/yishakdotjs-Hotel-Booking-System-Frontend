@@ -1,11 +1,14 @@
 export const initialState = {
   navToggled: false,
   isLoading: false,
+  isAuth: false,
+  accessToken: null,
 };
 
 export const actionTypes = {
   TOGGLE_NAV: "TOGGLE_NAV",
   LOADING: "LOADING",
+  AUTH: "AUTH",
 };
 
 const reducer = (state, action) => {
@@ -21,6 +24,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         isLoading: action.isLoading,
+      };
+      break;
+    case actionTypes.AUTH:
+      return {
+        ...state,
+        isAuth: action.isAuth,
+        accessToken: action.accessToken,
       };
       break;
     default:

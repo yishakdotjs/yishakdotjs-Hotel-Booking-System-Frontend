@@ -27,10 +27,10 @@ function Room(props) {
     <div>
       {details === undefined ? null : (
         <div className="roomDetails">
-          <div className="container mt-5">
+          <div className="container mt-3">
             <div className="row">
               {details.imageurls.map((image) => (
-                <div className="col-md-4">
+                <div className="col-md-4 mt-3">
                   <img
                     src={image}
                     alt="Room Detail Image"

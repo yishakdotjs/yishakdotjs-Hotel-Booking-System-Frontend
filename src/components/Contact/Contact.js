@@ -9,8 +9,8 @@ function Contact() {
     <div>
       <h1 className="contact__title text-center mt-5">Contact Us</h1>
       <div className="container">
-        <div className="row justify-content-between align-items-center m-0 mt-4">
-          <div className="col-md-6">
+        <div className="row justify-content-between align-items-center m-0">
+          <div className="col-md-6 mt-4">
             <form>
               <input
                 type="text"
@@ -32,7 +32,7 @@ function Contact() {
               </button>
             </form>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 mt-4">
             <img
               src={location}
               alt="Hotel Location"

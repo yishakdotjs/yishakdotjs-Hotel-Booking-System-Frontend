@@ -31,3 +31,13 @@
   font-family: Poppins Black;
   color: #fff;
 }
+
+.bookNow__check {
+  font-size: 40px;
+  color: #fff;
+}
+
+.bookNow__done {
+  color: #fff;
+  font-family: Poppins Black;
+}

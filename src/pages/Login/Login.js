@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { useHistory } from "react-router-dom";
 
 import { useStateValue } from "../../context/StateProvider";
 import { actionTypes } from "../../context/reducer";
@@ -10,6 +11,7 @@ import "./Login.css";
 
 function Login() {
   const [, dispatch] = useStateValue();
+  const history = useHistory();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -57,7 +59,12 @@ function Login() {
       .then((response) => {
         hideLoading();
         hideAlert();
-        alert("Login Success");
+        dispatch({
+          type: actionTypes.AUTH,
+          isAuth: true,
+          accessToken: response.data.accesstoken,
+        });
+        history.push("/admin");
       })
       .catch((err) => {
         hideLoading();

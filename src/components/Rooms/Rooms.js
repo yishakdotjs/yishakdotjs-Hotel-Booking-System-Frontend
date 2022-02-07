@@ -29,7 +29,14 @@ function Rooms() {
           <>
             {rooms.map((room) => (
               <div className="col-md-4 mt-5" key={room._id}>
-                <div className="rooms__room" key={room._id}>
+                <div
+                  className="rooms__room"
+                  //               style={{
+                  //                 background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                  // url(${room.imageurls[0]})`,
+                  //               }}
+                  key={room._id}
+                >
                   <h4 className="text-center">{room.name}</h4>
                   <Link to={"/room/" + room._id}>View Details</Link>
                 </div>
