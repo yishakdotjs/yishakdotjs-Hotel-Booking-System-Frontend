@@ -29,3 +29,7 @@ a {
 .alert {
   font-family: Poppins Regular;
 }
+
+.button {
+  font-size: 13px;
+}

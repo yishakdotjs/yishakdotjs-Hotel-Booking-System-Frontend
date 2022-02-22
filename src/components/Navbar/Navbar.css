@@ -31,7 +31,7 @@
   margin: 4px;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1000px) {
   .header__navbar__links {
     position: absolute;
     top: 0;

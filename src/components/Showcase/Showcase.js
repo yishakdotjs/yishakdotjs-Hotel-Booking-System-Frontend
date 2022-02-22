@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./Showcase.css";
 // import showcaseImage from "../../style/img/showcase.jpg";
 
-function Showcase() {
+function Showcase(props) {
   return (
     <div className="showcase d-flex align-items-center">
       <div className="container">
@@ -13,9 +12,13 @@ function Showcase() {
             <h1 className="showcase__hero">
               Rent a hotel room for your vacation
             </h1>
-            <Link to="/book-now" className="button mt-3 mr-3">
+            <button
+              to="/book-now"
+              className="button mt-3 mr-3"
+              onClick={props.scrollToBookNow}
+            >
               Book Now
-            </Link>
+            </button>
           </div>
           <div className="col-md-4"></div>
         </div>

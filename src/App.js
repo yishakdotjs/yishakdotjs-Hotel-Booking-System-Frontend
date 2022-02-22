@@ -13,7 +13,12 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Room from "./pages/Room/Room";
 
-import Admin from "./pages/Admin/Admin";
+import User from "./pages/Admin/User";
+import Rooms from "./pages/Admin/Rooms/Rooms";
+import CreateRoom from "./pages/Admin/Rooms/CreateRoom";
+import EditRoom from "./pages/Admin/Rooms/EditRoom";
+import CheckRoomsAndRates from "./pages/CheckRoomsAndRates/CheckRoomsAndRates";
+import UserDetails from "./pages/UserDetails/UserDetails";
 
 function App() {
   const [state] = useStateValue();
@@ -34,10 +39,19 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/check-rooms-and-rates"
+          component={CheckRoomsAndRates}
+        />
+        <Route exact path="/user-details" component={UserDetails} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/room/:id" component={Room} />
 
-        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/admin" component={User} />
+        <Route exact path="/admin/rooms" component={Rooms} />
+        <Route exact path="/admin/rooms/create" component={CreateRoom} />
+        <Route exact path="/admin/rooms/edit/:id" component={EditRoom} />
       </Switch>
     </div>
   );

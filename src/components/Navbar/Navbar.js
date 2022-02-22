@@ -51,6 +51,15 @@ function Navbar(props) {
               <li className="list-unstyled d-flex align-items-center justify-content-center">
                 <Link
                   to=""
+                  onClick={props.scrollToGallery}
+                  className="nav-link"
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li className="list-unstyled d-flex align-items-center justify-content-center">
+                <Link
+                  to=""
                   onClick={props.scrollToContact}
                   className="nav-link"
                 >
@@ -60,6 +69,15 @@ function Navbar(props) {
               <li className="list-unstyled d-flex align-items-center justify-content-center">
                 <Link to="" onClick={props.scrollToRooms} className="nav-link">
                   Rooms
+                </Link>
+              </li>
+              <li className="list-unstyled d-flex align-items-center justify-content-center">
+                <Link
+                  to=""
+                  onClick={props.scrollToAccommodations}
+                  className="nav-link"
+                >
+                  Accommodations
                 </Link>
               </li>
               <li className="list-unstyled d-flex align-items-center justify-content-center">

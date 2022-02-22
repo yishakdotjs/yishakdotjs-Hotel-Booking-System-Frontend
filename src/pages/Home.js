@@ -12,6 +12,7 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import BookNow from "../components/BookNow/BookNow";
 import Rooms from "../components/Rooms/Rooms";
+import Gallery from "../components/Gallery/Gallery";
 
 function Home() {
   const [, dispatch] = useStateValue();
@@ -20,6 +21,8 @@ function Home() {
   const contactSection = useRef();
   const bookNowSection = useRef();
   const roomsSection = useRef();
+  const accommodationSection = useRef();
+  const gallerySection = useRef();
 
   function scrollToAbout() {
     dispatch({
@@ -52,6 +55,22 @@ function Home() {
     });
     roomsSection.current.scrollIntoView({ behavior: "smooth" });
   }
+
+  function scrollToAccommodations() {
+    dispatch({
+      type: actionTypes.TOGGLE_NAV,
+      navToggled: false,
+    });
+    accommodationSection.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToGallery() {
+    dispatch({
+      type: actionTypes.TOGGLE_NAV,
+      navToggled: false,
+    });
+    gallerySection.current.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <div>
       <Helmet>
@@ -62,17 +81,24 @@ function Home() {
         scrollToContact={scrollToContact}
         scrollToBookNow={scrollToBookNow}
         scrollToRooms={scrollToRooms}
+        scrollToGallery={scrollToGallery}
+        scrollToAccommodations={scrollToAccommodations}
       />
-      <Showcase />
-      <div ref={roomsSection}>
-        <Rooms />
-      </div>
-      <Features />
+      <Showcase scrollToBookNow={scrollToBookNow} />
       <div ref={aboutSection}>
         <About />
       </div>
+      <div ref={gallerySection}>
+        <Gallery />
+      </div>
       <div ref={contactSection}>
         <Contact />
+      </div>
+      <div ref={roomsSection}>
+        <Rooms />
+      </div>
+      <div ref={accommodationSection}>
+        <Features />
       </div>
       <div ref={bookNowSection}>
         <BookNow />

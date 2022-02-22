@@ -10,12 +10,13 @@ function Rooms() {
   useEffect(() => {
     async function fetchData() {
       await axios
-        .get("/api/rooms/")
+        .get("/api/rooms")
         .then((data) => {
           setRooms(data.data.rooms);
         })
         .catch((err) => {
-          alert("Something went wrong please refresh the page");
+          // alert("Something went wrong please refresh the page");
+          console.log(err);
         });
     }
 
@@ -29,17 +30,11 @@ function Rooms() {
           <>
             {rooms.map((room) => (
               <div className="col-md-4 mt-5" key={room._id}>
-                <div
-                  className="rooms__room"
-                  //               style={{
-                  //                 background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                  // url(${room.imageurls[0]})`,
-                  //               }}
-                  key={room._id}
-                >
-                  <h4 className="text-center">{room.name}</h4>
-                  <Link to={"/room/" + room._id}>View Details</Link>
-                </div>
+                <img src={room.imageurls[0]} className="rooms__room"></img>
+                <h6 className="mt-3">{room.name}</h6>
+                <Link to={"/room/" + room._id} className="button w-100">
+                  See Details
+                </Link>
               </div>
             ))}
           </>

@@ -1,0 +1,13 @@
+.gallery__hero {
+  font-family: Poppins Black;
+  font-size: 50px;
+  color: black;
+}
+
+.gallery__image {
+  width: 100%;
+}
+
+.gallery__image:hover {
+  opacity: 0.6;
+}
