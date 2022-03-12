@@ -1,6 +1,10 @@
 .header__navbar {
   width: 100%;
   height: 60px;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .header__navbar__logo {

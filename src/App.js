@@ -19,6 +19,7 @@ import CreateRoom from "./pages/Admin/Rooms/CreateRoom";
 import EditRoom from "./pages/Admin/Rooms/EditRoom";
 import CheckRoomsAndRates from "./pages/CheckRoomsAndRates/CheckRoomsAndRates";
 import UserDetails from "./pages/UserDetails/UserDetails";
+import Booking from "./pages/Admin/Booking/Booking";
 
 function App() {
   const [state] = useStateValue();
@@ -50,6 +51,7 @@ function App() {
 
         <Route exact path="/admin" component={User} />
         <Route exact path="/admin/rooms" component={Rooms} />
+        <Route exact path="/admin/booking" component={Booking} />
         <Route exact path="/admin/rooms/create" component={CreateRoom} />
         <Route exact path="/admin/rooms/edit/:id" component={EditRoom} />
       </Switch>

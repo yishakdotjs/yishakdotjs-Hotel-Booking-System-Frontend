@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import axios from "../../axios";
 
@@ -36,11 +36,12 @@ function CheckRoomsAndRates() {
 
   function handleBook(id) {
     dispatch({
-      type: actionTypes.BOOKING,
+      type: actionTypes.CHECK_RATES,
       roomId: id,
     });
 
     history.push("/user-details");
+    // console.log(state);
   }
   return (
     <div>
@@ -66,6 +67,12 @@ function CheckRoomsAndRates() {
               ))}
             </>
           )}
+        </div>
+
+        <div className="d-flex align-items-center justify-content-center">
+          <Link className="button mt-5" to="/">
+            Go Back
+          </Link>
         </div>
       </div>
     </div>

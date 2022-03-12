@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { useStateValue } from "../../context/StateProvider";
 import { actionTypes } from "../../context/reducer";
@@ -107,6 +107,12 @@ function Login() {
               <button type="submit" className="button mt-2 w-100">
                 Login
               </button>
+
+              <div className="d-flex align-items-center justify-content-center">
+                <Link to="/" className=" mt-3">
+                  Go To Home Page
+                </Link>
+              </div>
             </form>
           </div>
         </div>

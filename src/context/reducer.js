@@ -9,9 +9,8 @@ export const initialState = {
     checkOut: null,
     guest: null,
     room: null,
-    roomType: null,
+    // roomType: null,
   },
-
   roomId: null,
 };
 

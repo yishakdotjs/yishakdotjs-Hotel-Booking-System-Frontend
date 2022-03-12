@@ -29,7 +29,7 @@ function Navbar(props) {
     <div>
       <div className="header__navbar shadow-sm d-flex align-items-center justify-content-center">
         <div className="container d-flex align-items-center justify-content-between">
-          <Link to="/">
+          <Link to="/" onClick={props.scrollToHome}>
             <img
               src="http://hruyan.com/assets/images/logo.png"
               alt="Hotel Logo"
@@ -39,13 +39,8 @@ function Navbar(props) {
           <div className="d-flex align-items-center justify-content-between">
             <ul className="header__navbar__links d-flex m-0" ref={mobileMenu}>
               <li className="list-unstyled d-flex align-items-center justify-content-center">
-                <Link to="/" className="nav-link">
+                <Link to="/" className="nav-link" onClick={props.scrollToHome}>
                   Home
-                </Link>
-              </li>
-              <li className="list-unstyled d-flex align-items-center justify-content-center">
-                <Link to="" onClick={props.scrollToAbout} className="nav-link">
-                  About Us
                 </Link>
               </li>
               <li className="list-unstyled d-flex align-items-center justify-content-center">
@@ -55,15 +50,6 @@ function Navbar(props) {
                   className="nav-link"
                 >
                   Gallery
-                </Link>
-              </li>
-              <li className="list-unstyled d-flex align-items-center justify-content-center">
-                <Link
-                  to=""
-                  onClick={props.scrollToContact}
-                  className="nav-link"
-                >
-                  Contact Us
                 </Link>
               </li>
               <li className="list-unstyled d-flex align-items-center justify-content-center">
@@ -78,6 +64,20 @@ function Navbar(props) {
                   className="nav-link"
                 >
                   Accommodations
+                </Link>
+              </li>
+              <li className="list-unstyled d-flex align-items-center justify-content-center">
+                <Link to="" onClick={props.scrollToAbout} className="nav-link">
+                  About Us
+                </Link>
+              </li>
+              <li className="list-unstyled d-flex align-items-center justify-content-center">
+                <Link
+                  to=""
+                  onClick={props.scrollToContact}
+                  className="nav-link"
+                >
+                  Contact Us
                 </Link>
               </li>
               <li className="list-unstyled d-flex align-items-center justify-content-center">

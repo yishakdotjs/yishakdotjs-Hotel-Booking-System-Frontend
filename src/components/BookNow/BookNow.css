@@ -18,10 +18,10 @@
   font-family: Poppins Regular;
 }
 
-.bookNow form .form-control {
+/* .bookNow form .form-control {
   background: transparent !important;
   color: #fff;
-}
+} */
 
 .bookNow form option {
   color: #000;

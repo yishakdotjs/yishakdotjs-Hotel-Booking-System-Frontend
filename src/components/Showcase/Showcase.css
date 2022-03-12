@@ -5,6 +5,7 @@
     url(../../style/img/showcase.jpg);
   background-position: center;
   background-size: cover;
+  margin-top: 60px;
 }
 
 .showcase__hero {

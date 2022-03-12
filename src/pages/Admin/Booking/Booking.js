@@ -9,9 +9,9 @@ import { actionTypes } from "../../../context/reducer";
 import Sidebar from "./../Sidebar";
 import Helmet from "react-helmet";
 
-function Rooms() {
+function Booking() {
   const [state, dispatch] = useStateValue();
-  const [rooms, setRooms] = useState();
+  const [bookings, setBookings] = useState();
 
   const history = useHistory();
 
@@ -38,18 +38,18 @@ function Rooms() {
   useEffect(() => {
     if (state.isAuth === true) {
       axios
-        .get("/api/rooms")
+        .get("/api/booking/list_all_reservations")
         .then((data) => {
-          setRooms(data.data.rooms);
+          setBookings(data.data.reservations);
         })
         .catch((err) => {
           alert(
             "Something went wrong. Please try again by refreshing the page."
           );
+          console.log(err);
         });
     }
-  });
-
+  }, []);
   return (
     <div>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -88,61 +88,60 @@ function Rooms() {
             </div>
 
             <div className="d-flex justify-content-between mb-3">
-              <h2>Rooms</h2>
-              <Link
-                to="/admin/rooms/create"
-                className="btn btn-lg btn-secondary"
-              >
-                Add Room
-              </Link>
+              <h2>Bookings</h2>
             </div>
             <div className="table-responsive">
               <table className="table table-striped table-sm">
                 <thead>
                   <tr>
-                    <th scope="col">Room Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Rent Per Day</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Room Id</th>
+                    <th scope="col">Room Amount</th>
+                    <th scope="col">paymentStatus</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
+
                 <tbody>
-                  {rooms === undefined
+                  {bookings === undefined
                     ? null
-                    : rooms.map((room) => (
-                        <tr key={room._id}>
-                          <td>{room.name}</td>
-                          <td>{room.type}</td>
-                          <td>{room.rentperday}</td>
+                    : bookings.map((book) => (
+                        <tr key={book._id}>
+                          <td>{book.bookingInfo[0].pax[0].name}</td>
+                          <td>{book.bookingInfo[0].roomType}</td>
+                          <td>{book.bookingInfo[0].roomAmount}</td>
+                          <td>{book.paymentStatus}</td>
                           <td>
-                            <Link
+                            {/* <Link
                               to={"/admin/rooms/edit/" + room._id}
                               className="btn btn-sm btn-primary mr-1"
                             >
                               Edit
-                            </Link>
+                            </Link> */}
                             <button
                               className="btn btn-sm btn-danger"
                               onClick={() => {
                                 axios
-                                  .delete("/api/rooms/" + room._id, {
-                                    headers: {
-                                      Authorization: `${state.accessToken}`,
-                                    },
-                                  })
-                                  .then((response) => {
-                                    if (response.data.msg === "success") {
-                                      axios
-                                        .get("/api/rooms")
-                                        .then((data) => {
-                                          setRooms(data.data.rooms);
-                                        })
-                                        .catch((err) => {
-                                          alert(
-                                            "Something went wrong. Please try again by refreshing the page."
-                                          );
-                                        });
+                                  .delete(
+                                    "/api/booking/delete_reservation/" +
+                                      book._id,
+                                    {
+                                      headers: {
+                                        Authorization: `${state.accessToken}`,
+                                      },
                                     }
+                                  )
+                                  .then((response) => {
+                                    axios
+                                      .get("/api/booking/list_all_reservations")
+                                      .then((data) => {
+                                        setBookings(data.data.reservations);
+                                      })
+                                      .catch((err) => {
+                                        alert(
+                                          "Something went wrong. Please try again by refreshing the page."
+                                        );
+                                      });
                                   })
                                   .catch((err) => {
                                     alert("something went wrong");
@@ -164,4 +163,4 @@ function Rooms() {
   );
 }
 
-export default Rooms;
+export default Booking;

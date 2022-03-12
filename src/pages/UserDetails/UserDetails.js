@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import countryList from "../../data/country_list.json";
 
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import axios from "../../axios";
 
@@ -38,15 +38,68 @@ function UserDetails() {
       });
 
       axios
-        .post("/api/booking/add_reservation", {})
-        .then((response) => {})
+        .post("/api/booking/add_reservation", {
+          // userId: "null",
+          // checkInDate: state.booking.checkIn,
+          // checkOutDate: state.booking.checkOut,
+          // paymentId: "null",
+          // bookingInfo: [
+          //   {
+          //     pax: [
+          //       {
+          //         name: name,
+          //         adultStatus: "null",
+          //         gender: "null",
+          //         age: "null",
+          //       },
+          //     ],
+          //     roomType: "null",
+          //     roomId: state.roomId,
+          //     roomAmount: state.booking.room,
+          //   },
+          // ],
+          userEmail: email,
+          checkInDate: state.booking.checkIn,
+          checkOutDate: state.booking.checkOut,
+          paymentId: "null",
+          bookCode: "null",
+          paymentStatus: "not-paid",
+          isPast: false,
+
+          name: name,
+          adultStatus: "null",
+          gender: "null",
+          age: 0,
+          roomType: "null",
+          roomID: state.booking.roomID,
+          roomAmount: state.booking.room,
+        })
+        .then((response) => {
+          dispatch({
+            type: actionTypes.LOADING,
+            isLoading: false,
+          });
+          alert(response.data.msg);
+          history.push("/");
+        })
         .catch((err) => {
+          dispatch({
+            type: actionTypes.LOADING,
+            isLoading: false,
+          });
+          console.log(err.response);
           alert("Something Went Wrong");
         });
     } else {
       history.push("/payment");
     }
   }
+
+  useEffect(() => {
+    if (state.booking.checkIn === null) {
+      history.push("/");
+    }
+  });
   return (
     <div className="user_details__container">
       <div className="container mb-5 mt-5">
@@ -184,6 +237,12 @@ function UserDetails() {
               <button type="submit" className="button w-100 mt-3">
                 Submit
               </button>
+
+              <div className="d-flex align-items-center justify-content-center">
+                <Link to="/" className=" mt-3">
+                  Go To Home Page
+                </Link>
+              </div>
             </form>
           </div>
         </div>

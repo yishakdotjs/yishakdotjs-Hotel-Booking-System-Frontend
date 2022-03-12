@@ -14,7 +14,7 @@ function BookNow() {
 
   const history = useHistory();
 
-  const [allRooms, setAllRooms] = useState();
+  // const [allRooms, setAllRooms] = useState();
 
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
@@ -23,18 +23,18 @@ function BookNow() {
   // const [child, setChild] = useState(0);
   const [guest, setGuest] = useState(1);
   const [room, setRoom] = useState(1);
-  const [roomType, setRoomType] = useState();
+  // const [roomType, setRoomType] = useState();
 
   //
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [country, setCountry] = useState();
-  const [address, setAddress] = useState();
-  const [address2, setAddress2] = useState();
-  const [zip, setZip] = useState();
-  const [city, setCity] = useState();
-  const [state, setState] = useState();
+  // const [name, setName] = useState();
+  // const [email, setEmail] = useState();
+  // const [phone, setPhone] = useState();
+  // const [country, setCountry] = useState();
+  // const [address, setAddress] = useState();
+  // const [address2, setAddress2] = useState();
+  // const [zip, setZip] = useState();
+  // const [city, setCity] = useState();
+  // const [state, setState] = useState();
 
   const firstStage = useRef();
   const secondStage = useRef();
@@ -55,20 +55,20 @@ function BookNow() {
     progressBar.current.style = "width: 50%";
     progressBar.current.innerText = "50%";
 
-    async function getRooms() {
-      await axios
-        .get("/api/rooms/")
-        .then((data) => {
-          setAllRooms(data.data.rooms);
-        })
-        .catch((err) => {
-          alert(
-            "Something went wrong please try again by refreshing the website"
-          );
-        });
-    }
+    // async function getRooms() {
+    //   await axios
+    //     .get("/api/rooms/")
+    //     .then((data) => {
+    //       setAllRooms(data.data.rooms);
+    //     })
+    //     .catch((err) => {
+    //       alert(
+    //         "Something went wrong please try again by refreshing the website"
+    //       );
+    //     });
+    // }
 
-    getRooms();
+    // getRooms();
   }, []);
 
   function bookRoom() {}
@@ -86,9 +86,11 @@ function BookNow() {
         return alert("Adult In is Required");
       } else if (room === undefined) {
         return alert("Room is Required");
-      } else if (roomType === undefined) {
-        return alert("Room Type is Required");
       }
+
+      // else if (roomType === undefined) {
+      //   return alert("Room Type is Required");
+      // }
     }
     // if (from === 3 && to > from) {
     //   if (name === undefined) {
@@ -165,12 +167,27 @@ function BookNow() {
         checkOut: checkOut,
         guest: guest,
         room: room,
-        roomType: roomType,
+        // roomType: roomType,
       },
     });
 
     history.push("/check-rooms-and-rates");
   }
+
+  const checkInRef = useRef();
+  const checkOutRef = useRef();
+
+  useEffect(() => {
+    var today = new Date().toISOString().split("T")[0];
+    checkInRef.current.setAttribute("min", today);
+
+    if (checkIn === undefined) {
+      checkOutRef.current.disabled = true;
+    } else {
+      checkOutRef.current.disabled = false;
+      checkOutRef.current.setAttribute("min", checkIn);
+    }
+  }, [checkIn]);
 
   return (
     <div className="bookNow mt-5 pt-5 pb-5">
@@ -205,6 +222,7 @@ function BookNow() {
                   Check In
                 </label>
                 <input
+                  ref={checkInRef}
                   type="date"
                   id="check_in"
                   className="form-control"
@@ -219,6 +237,7 @@ function BookNow() {
                   Check Out
                 </label>
                 <input
+                  ref={checkOutRef}
                   type="date"
                   id="check_out"
                   className="form-control"
@@ -294,7 +313,7 @@ function BookNow() {
                   onChange={(e) => setRoom(e.target.value)}
                 />
               </div>
-              <div className="col-md-4">
+              {/* <div className="col-md-4">
                 <label htmlFor="room_type" className="bookNow__form__label">
                   Room type
                 </label>
@@ -314,7 +333,7 @@ function BookNow() {
                     </>
                   )}
                 </select>
-              </div>
+              </div> */}
               {/* <div className="col-md-4 d-flex align-items-center justify-content-center">
                 <button type="button" className="btn btn-primary mr-2">
                   Add

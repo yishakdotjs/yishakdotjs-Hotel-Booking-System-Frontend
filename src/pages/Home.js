@@ -23,6 +23,7 @@ function Home() {
   const roomsSection = useRef();
   const accommodationSection = useRef();
   const gallerySection = useRef();
+  const homeSection = useRef();
 
   function scrollToAbout() {
     dispatch({
@@ -71,19 +72,30 @@ function Home() {
     });
     gallerySection.current.scrollIntoView({ behavior: "smooth" });
   }
+
+  function scrollToHome() {
+    dispatch({
+      type: actionTypes.TOGGLE_NAV,
+      navToggled: false,
+    });
+    homeSection.current.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <div>
       <Helmet>
         <title>Home - BSS Hotel</title>
       </Helmet>
-      <Navbar
-        scrollToAbout={scrollToAbout}
-        scrollToContact={scrollToContact}
-        scrollToBookNow={scrollToBookNow}
-        scrollToRooms={scrollToRooms}
-        scrollToGallery={scrollToGallery}
-        scrollToAccommodations={scrollToAccommodations}
-      />
+      <div ref={homeSection}>
+        <Navbar
+          scrollToAbout={scrollToAbout}
+          scrollToContact={scrollToContact}
+          scrollToBookNow={scrollToBookNow}
+          scrollToRooms={scrollToRooms}
+          scrollToGallery={scrollToGallery}
+          scrollToAccommodations={scrollToAccommodations}
+          scrollToHome={scrollToHome}
+        />
+      </div>
       <Showcase scrollToBookNow={scrollToBookNow} />
       <div ref={aboutSection}>
         <About />
